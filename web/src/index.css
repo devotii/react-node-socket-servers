@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+  --theme-color: 7, 190, 97;
+
+  --bg-color: 12, 15, 17;
+  --bg-color-dark: 19, 24, 28;
+  --bg-color-light: 23, 29, 33;
+
+  --border-0: 36, 42, 49;
+
+  --text-color: 255, 255, 255;
+  --text-color-dark-0: 180, 180, 180;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  background: rgb(var(--bg-color));
+}
+
+.container {
+  height: calc(100vh - 44px);
+  padding: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+}
+
+.card {
+  height: 400px;
+  width: 100%;
+  max-width: 350px;
+  background: rgb(var(--bg-color-dark));
+  padding: 4px;
+  border: 1px solid rgb(var(--border-0));
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.card .body .item {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.card .body .item span {
+  width: 80px;
+  color: rgb(var(--text-color));
+  padding: 0 0 0 2px;
+  letter-spacing: .8px;
+  font-size: 12px;
+}
+
+.card .body .item .content {
+  color: rgb(var(--text-color-dark-0));
+  background: rgb(var(--bg-color-light));
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.card .servers {
+  background: rgb(var(--bg-color-dark));
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card[data-page="1"] .servers {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card .servers .server {
+  height: 40px;
+  color: rgb(var(--text-color-dark-0));
+  background: rgb(var(--bg-color-light));
+  padding: 0 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.card .servers .server .circle {
+  height: 8px;
+  width: 8px;
+  background: rgb(var(--theme-color));
+  border-radius: 50%;
+}
+
+.title {
+  color: rgb(var(--text-color));
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.buttons {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: rgb(var(--theme-color));
+  position: absolute;
+  bottom: -12px;
+  right: 0;
+  text-decoration: none;
+  font-size: 12px;
+  transition: .2s;
+}
+
+a:hover {
+  opacity: .6;
+}
+
+button {
+  height: 40px;
+  width: 150px;
+  color: rgb(var(--text-color));
+  background: rgb(var(--theme-color));
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: .2s;
+}
+
+button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.9);
+}
+
+button:disabled {
+  opacity: .6;
+  cursor: default;
+}
+
+::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
